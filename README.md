@@ -8,11 +8,7 @@ Agno is a python framework for building multi-agents. Since the arrival of ChatG
 
 ---
 
-## Images
-
-![Picture yet without interection](./readme_files/Screenshot.png)
-
-![Picture with interection](./readme_files/Screenshot-1.png)
+## Image
 
 ![GIF of the interaction](./readme_files/luna.gif)
 
@@ -38,13 +34,13 @@ In my career I have done dozens of connections of the Frontend connection with B
 
 ### Files
 
-The files to run the backend are:
+The files to run the Backend are:
 
 - agno_agent.py - contains the agent that does a request to the route that draw 3 random cards. Also from the 3 card do a reading using the gpt-3.5 LLM from OpenAI.
-- main.py - initializes the app FastAPI and sets the cors so the backend can communicate with frontend without being blocked by the web navigator
+- main.py - initializes the app FastAPI and sets the cors so the Backend can communicate with Frontend without being blocked by the web navigator
 - models.py - defines the models used by the route to connect with database
 - routes.py - define 2 routes one with the 3 cards random that collects from the database and another route that calls the function from agno_agent to generate the reading
-- schemas.py - define the schema which is used to validate data to the frontend
+- schemas.py - define the schema which is used to validate data to the Frontend
 - utils.py - creates a connection with the database postgres
 
 ---
@@ -69,3 +65,22 @@ You can find all needed libs in requirements.txt but these are the most relevant
 - SQLAlchemy - deals with db
 - uvicorn - run the app
 - postgres - database
+
+---
+
+## To run
+
+### Backend
+
+1. Open vs code in the folder Backend
+2. Create a file .env with `API_URL = "http://localhost:8000"` and your api key `OPENAI_API_KEY` (dont change the name, or the api will not be used)
+3. Install requirements `pip install -r requirements.tsx`
+4. Create your venv `python3 -m ven venv`
+5. Activate your venv `source ./venv/bin/activate` (if not linux, then look for the code you will need to active)
+6. Run `uvicorn app.main:app --reload`
+
+### Frontend
+
+1. Open vs code in the folder Frontend
+2. Run `npx next dev`
+3. Open link local host showed in terminal
